@@ -1,0 +1,319 @@
+% -*- latex -*-
+\documentclass[12pt]{article}
+\usepackage{anppom2006}
+
+% usar para termos estrangeiros
+\newcommand{\eng}[1]{\textit{#1}}
+
+\sloppy
+
+\begin{document}
+\graphicspath{{figs-out/}{out/}}
+
+\title{O processo de desenvolvimento de uma codificação para definir
+  estruturas musicais}
+
+\author{Pedro Kröger, Marcos Sampaio, e Givaldo de Cidra}
+{Universidade Federal da Bahia}{pedro.kroger@gmail.com}
+
+%\author{}{}{}
+
+\begin{sumario} 
+\input{resumo.txt}
+\end{sumario}
+
+\keywords{Informática em música, codificação musical}
+
+\onehalfspacing
+
+\section{Introdução}
+\label{sec:introducao}
+
+A codificação musical é a busca da representação de elementos sonoros.
+Exemplos simples de codificações incluem a representação das notas
+musicais por letras (C para dó, D para ré, e assim por diante) ou
+números (0 para dó, 1, para dó$\sharp$, 2 para ré, e assim
+sucessivamente). Codificações musicais têm sido usadas desde os
+primeiros esforços do homem para transcrever sons. Ainda que a
+codificação musical não esteja limitada a aplicações para computador é
+nessa área que encontramos o maior número de pesquisas, dadas as
+possibilidades de processamento oferecidas
+\cite[p.~3--5]{selfridge-field97:beyond}. Existem codificações para
+performance, síntese sonora, jogos, notação musical, braille,
+bibliografia musical, análise de canções folclóricas, dentre outras
+\cite{kroger05:codificacao}. Novas codificações como SDML e MusicXML
+\cite{good01:musicxml}, em geral, lidam apenas com elementos de
+notação como compasso, notas, durações, etc. Algumas pesquisas lidam
+com o conceito de ``unidades composicionais''
+\cite{berggren97:beyond-chapter} e reconhecem a necessidade de agrupar
+a representação em unidades como ``frases'' \cite{rol00:xml4mir},
+contudo não há nenhuma pesquisa envolvendo uma codificação específica
+para definir estruturas musicais em um nível mais alto de abstração.
+
+% colocar: do Genos (Grupo de pesquisa em informática em música da UFBA)
+Nós estamos desenvolvendo uma codificação que permite lidar com dados
+musicais em um nível mais alto de abstração que alturas e duração como
+``mostrar todos os sujeitos das fugas do Cravo Bem Temperado de Bach'',
+ou ``mostre todas as respostas reais das fugas do Cravo Bem
+Temperado'' (o que na verdade significa ``pegue todas as respostas,
+transponha uma quinta abaixo, compare com os sujeitos e mostre as que
+são reais''). Outros exemplos incluem acordes para o estudo de
+orquestração, elementos formais, harmônicos e motívicos.
+
+\section{O processo de codificação}
+\label{sec:o-processo-de}
+
+Em vez de escolher a abordagem de definir primeiramente uma
+representação e implementá-la em seguida (modelo \eng{top-down}),
+escolhemos a abordagem de escrever programas para aprender conceitos
+\cite{krishnamurthi06:programming}. Ou seja, diferentes aspectos de
+uma codificação são testados em um protótipo, e sua utilidade é
+validada ou descartada. A vantagem dessa abordagem é que idéias e
+problemas sobre uma codificação podem ser rapidamente experimentados e
+entendidos antes de serem definidos mais formalmente (como em uma
+especificação).
+
+Para implementar o protótipo nós usamos a metodologia
+\textit{bottom-up} de desenvolvimento e a linguagem de programação
+Lisp devido a seu poder, flexibilidade e eficiência. Lisp tem se
+mostrado uma excelente linguagem para a criação de linguagens de
+domínio específico (LDE) \cite{graham33:onlisp}. Dessa maneira nós
+criamos uma LDE em Lisp que define a codificação desejada. Isso
+permite testar na prática a codificação o mais cedo possível.
+
+A codificação é definida usando expressões simbólicas como pode ser
+visto na figura~\ref{fig:codificacao-lisp}. Uma das vantagens dessa
+abordagem é que não é necessário construir um analisador léxico e
+sintático para a linguagem já que a linguagem é ``embutida'' em Lisp.
+O parseamento é provido por Lisp.
+
+\begin{figure}
+  \centering
+\footnotesize
+\begin{verbatim}
+(event 'coral-5
+       :key '(c major)
+       :time 4/4
+       (event 'frase1
+              :partial 4
+              (event 'soprano
+                     :relative 5
+                     :notes "c c8 b a b c d e4 d d c")
+\end{verbatim}
+  \caption{Trecho de codificação em Lisp}
+  \label{fig:codificacao-lisp}
+\end{figure}
+
+\section{Problemas específicos}
+\label{sec:problemas}
+
+O trabalho de criação de uma codificação para estruturas musicais
+revelou alguns problemas específicos relativos a cada tipo de
+estrutura envolvida. Até o presente momento trabalhamos com corais e
+acordes de orquestra. Em cada um deles há várias estruturas que podem
+ser consideradas relevantes para descrever sintaticamente. As
+estruturas trabalhadas até agora foram forma e harmonia no coral; e
+orquestração nos acordes de orquestra.
+
+\subsection{Eventos}
+
+Utilizamos a idéia de evento para criar a codificação para as
+estruturas musicais. Uma das vantagens desta escolha é que os eventos
+podem ser hierarquicamente organizados e que algumas estruturas
+musicais podem ser enquadradas em uma hierarquia. No caso do coral,
+percebemos que dois tipos de elementos podem ser organizados
+hierarquicamente: seções formais e a harmonia. No que se refere às
+seções formais, há uma hierarquia entre os períodos, frases e
+cadências. As cadências são contidas por frases, que são contidas por
+períodos, e o coral\,---\,a estrutura completa\,---\,contém todos. Em
+relação à harmonia, os acordes estão contidos em regiões cêntricas.
+Estas regiões podem ainda estar contidas em regiões maiores. O ítem
+mais elevado desta hierarquia é também o coral como um todo. Há outros
+elementos musicais que são hierarquicamente contidos pelo coral em si.
+Um exemplo é o conjunto das vozes (soprano, contralto, tenor e baixo).
+
+Os elementos ``forma'', ``harmonia'' e ``vozes'', no entanto, não
+estão relacionados entre si de forma hierárquica. Eles são, ao mesmo
+tempo, dependentes e independentes entre si. (c.f. figura
+\ref{fig:hcoral}). Este tipo de relação pode ser entendida pelo
+seguinte exemplo: as vozes não estão sub-relacionadas à harmonia ou à
+forma, porém, a forma e a harmonia são o resultado do comportamento
+das vozes. Podemos pensar também que as vozes se comportam de acordo
+com uma determinada forma. Um outro exemplo é a harmonia, que é
+pensada a partir do baixo mas não depende necessariamente dele. Basta
+saber o tipo de acorde e a inversão para codificá-la. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=.8]{hierarquias}
+  \caption{Hierarquias do coral}
+  \label{fig:hcoral}
+\end{figure}
+
+\subsection{Codificação das durações}
+
+A codificação de ritmos binários é bastante simples. Utilizamos o
+padrão que determina que uma mínima equivale ao número 2, uma semínima
+ao número 4, uma colcheia ao número 8, e assim sucessivamente. Essa é
+uma representação inversa dos valores das figuras em relação a
+semibreve. No entanto a codificação de ritmos que envolvem quiálteras
+e notas ligadas pode se tornar mais complicada. A figura
+\ref{fig:padrao} mostra um padrão rítmico que pode ser codificado em
+frações da seguinte maneira:
+
+\begin{displaymath}
+    \frac{1}{8},\frac{1}{8}+,\frac{2}{3}\left[\frac{1}{8},\frac{1}{8}+,\frac{4}{5}\left[\frac{1}{32},\frac{1}{16},\frac{1}{32},\frac{1}{32}\right]\right]
+\end{displaymath}
+
+Esta operação pode ser simplificada matematicamente para se obter o
+valor fracionário total de cada nota, porém isso torna mais difícil
+obter a representação rítmica original.
+
+\begin{displaymath}
+\frac{1}{8}, \frac{1}{8}+, \frac{1}{12}, \frac{1}{12}+, \frac{1}{60},
+\frac{1}{30}, \frac{1}{60}, \frac{1}{60} \rightarrow
+\frac{1}{8}, \frac{5}{24} \frac{1}{10} \frac{1}{30}, \frac{1}{60}, \frac{1}{60}
+\end{displaymath}
+
+\begin{figure}%
+\centering
+\begin[staffsize=16,line-width=8\cm]{lilypond}
+  \new Staff \with {
+    \remove "Time_signature_engraver"
+    \remove "Clef_engraver"
+    \remove "Staff_symbol_engraver"
+  }
+  {\stopStaff 
+    \time 4/4
+    \set tupletNumberFormatFunction = #fraction-tuplet-formatter
+    b'8 b'8~ \times 2/3 {b'8[ b'~ \times 4/5 {b'32 b'16 b'32 b'32]}}
+  }
+\end{lilypond}
+\caption{Padrão rítmico}
+\label{fig:padrao}
+\end{figure}
+
+\subsection{Codificação da harmonia}
+
+Identificamos as características mais importantes dos acordes e
+os representamos como uma lista contendo a fundamental, o ritmo
+harmônico, o tipo de acorde, acréscimos, e inversões (na
+fig.~\ref{fig:acordeharm} pode ser visto um exemplo para o acorde
+cifrado como b$^{\diameter 6}_{\ \ \ 5}$). Para simplificar a codificação
+criamos um acorde com os valores das características estabelecidas por
+padrão: duração de uma semínima, maior, e na primeira inversão. Para
+codificar a harmonia, porém, precisamos identificar as regiões
+cêntricas. Um dos maiores problemas na codificação da harmonia foi
+compreender o comportamento dos centros.
+
+\begin{figure}
+  \centering
+  \includegraphics{acorde}
+  \caption{Codificação de acordes (harmonia)}
+  \label{fig:acordeharm}
+\end{figure}
+
+\subsection{Codificação de acordes (p/ orquestra)}
+
+Este tipo de codificação se assemelha bastante à codificação do
+coral. A principal diferença é que ela contempla elementos como
+dinâmicas, articulações, indicações de caráter e outras informações
+importantes para o entendimento da orquestração. O problema específico
+da codificação de acordes orquestrais está relacionado aos casos de
+textura não homofônica.
+
+\subsection{Seleção vertical}
+
+A codificação de estruturas musicais verticais foi, até agora, o
+principal problema encontrado na nossa pesquisa. Apesar de tais
+estruturas serem escritas verticalmente, o código é escrito
+horizontalmente (c.f. figura \ref{fig:codselvert}). Para selecionar este
+tipo de estrutura vertical, é necessário combinar a posição exata das
+suas notas em cada um dos eventos (vozes). A figura \ref{fig:selvert}
+traz um pequeno trecho de textura a quatro vozes com um acorde
+destacado (a seleção vertical), e a figura \ref{fig:codselvert}, a
+codificação deste trecho com um destaque para a referida seleção.
+
+\begin{figure}%
+\centering
+\subfloat[][]{\label{fig:selvert}\includegraphics{selecao-vertical-notas}}%
+\qquad
+\subfloat[][]{\label{fig:codselvert}\includegraphics[scale=.9]{selecao-vertical-codigo}}%
+\caption{Seleção vertical em notação e código}
+\label{fig:selecao}%
+\end{figure}
+
+Pensamos em duas formas de codificar este tipo de estrutura:
+
+\begin{enumerate}
+\item Localizar a estrutura no código. Esta seria uma forma em que
+  contaríamos a posição da seleção em cada evento no próprio código.
+  Por exemplo, no trecho exibido na figura \ref{fig:selvert}, diríamos
+  que a seleção vertical se encontra no evento soprano, na quarta
+  nota; e nos eventos contralto, tenor e baixo, na terceira nota.
+\item Localizar a estrutura numerando a posição dentro do compasso.
+  Esta forma indica o número do compasso, o momento onde se inicia e
+  onde se encerra a seleção, em cada evento (soprano, contralto, tenor
+  e baixo).
+\end{enumerate}
+
+A desvantagem da primeira opção é a possibilidade de erro, pois, caso
+haja alteração em alguma voz, na duração de alguma nota anterior à
+seleção, todo o evento se deslocará, tornando necessária a
+recodificação da seleção. Já a segunda opção tem como desvantagem a
+prolixidade da codificação, sendo necessário indicar, voz por voz, o
+início e o fim da seleção.
+
+\section{Trabalhos relacionados}
+
+O Humdrum foi criado para facilitar a possibilidade de propor
+perguntas e respostas à questões relacionadas a pesquisa no campo
+musical \cite{selfridge-field97:_humdr_and_kern}. Ele pode extrair
+trechos usando expressões regulares ou através do comando
+\texttt{extract}, que extrai colunas dentro da representação
+``tabular'' do Humdrum \cite{huron99:music_resear_using_humdr}. Ele
+provê grande extensibilidade, contudo não de uma maneira padrão
+(existem mais de 40 formatos). O
+\textit{Themefinder} (\url{www.themefinder.org}) é um exemplo
+de uso do Humdrum. Ele permite a busca por notas, intervalos, grau da
+escala, e contorno. Essa é uma demonstração da limitação desse tipo de
+codificação que lida apenas com elementos como compasso, notas,
+durações, etc, conforme citamos anteriormente. Apesar de novas
+\eng{spines} (uma coluna com informação) poderem ser criadas é difícil
+criar representações em um nível mais alto de abstração.
+
+O MusicXML foi criada para ser uma representação para notação
+intercambiável entre diferentes representações. Ela possui suporte
+para notação musical, performance, análise, e extração de
+dados. Contudo ela foi criada para ser ``suficiente'' e não
+``otimizada'' para essas aplicações \cite{good01:musicxml}. O MusicXML
+não só não possui abstrações em níveis mais alto como explicitamente
+divide a representação em compassos, tornando difícil a representação
+de estruturas que englobam partes de compassos.
+
+\section{Conclusão}
+\label{sec:conclusao}
+
+O trabalho de codificação de estruturas musicais com um alto grau de
+abstração ocupa um espaço ainda não preenchido na área de informática
+em música. A pesquisa tem sido feita de acordo com a metodologia
+\eng{bottom-up}, que tem se mostrado adequada para o problema
+escolhido. A codificação é definida usando expressões simbólicas
+permitindo re-definir lexicamente e sintaticamente a codificação sem
+maiores esforços.
+
+Os próximos passos da pesquisa compreendem a continuação do
+desenvolvimento do protótipo para testes que incluirá os corais
+harmonizados, fugas e acordes de orquestração. A partir do protótipo
+poderemos expandir o trabalho com a inclusão de outras estruturas
+musicais como notas auxiliares à harmonia, melodias em larga escala e
+contornos melódicos. Este protótipo poderá servir como base para a
+criação de um banco de dados que armazene estruturas musicais com um
+alto grau de abstração em diversas obras da literatura.
+
+\singlespacing
+
+\bibliographystyle{kchicago}
+\bibliography{bibliography}
+
+\end{document}

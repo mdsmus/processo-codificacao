@@ -1,0 +1,7 @@
+Para gerar um arquivo gráfico como dvi, ps, ou pdf os seguintes
+programas são necessários:
+
+ - inkscape
+ - dia
+ - lilypond
+ - latex

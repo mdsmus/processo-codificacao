@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3466"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   sodipodi:docbase="/home/kroger/doc/artigos/processo-codificacao/figs"
+   sodipodi:docname="selecao-vertical-codigo.svg">
+  <defs
+     id="defs3468" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.2163554"
+     inkscape:cx="65.42028"
+     inkscape:cy="882.30319"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1278"
+     inkscape:window-height="988"
+     inkscape:window-x="0"
+     inkscape:window-y="0" />
+  <metadata
+     id="metadata3471">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1688"
+       transform="translate(-37.19366,-21.05269)">
+      <text
+         y="64.177917"
+         xml:space="preserve"
+         x="77.257896"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_0">\new Staff {  </text>
+      <text
+         y="76.177917"
+         xml:space="preserve"
+         x="77.257896"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_1">  \relative c''{  </text>
+      <text
+         y="88.177917"
+         xml:space="preserve"
+         x="77.257896"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_2">    r c~ c b   </text>
+      <g
+         transform="translate(-17.99048,-3.06221)"
+         id="g1666">
+        <text
+           id="text_line_3"
+           style="font-size:10px;font-family:Courier 10 pitch"
+           x="172.56308"
+           xml:space="preserve"
+           y="90.505196">  }  </text>
+        <text
+           id="text_line_4"
+           style="font-size:10px;font-family:Courier 10 pitch"
+           x="179.54308"
+           xml:space="preserve"
+           y="90.505196">}  </text>
+      </g>
+      <path
+         transform="matrix(0.306405,0,0,0.35593,-4.5064,6.908894)"
+         sodipodi:open="true"
+         sodipodi:end="10.083"
+         sodipodi:start="3.8365587"
+         d="M 473.91503,205.02841 A 22.424416,20.665638 0 1 1 473.39914,205.62044"
+         sodipodi:ry="20.665638"
+         sodipodi:rx="22.424416"
+         sodipodi:cy="218.26184"
+         sodipodi:cx="491.13867"
+         id="path3788"
+         style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         sodipodi:type="arc" />
+    </g>
+    <g
+       id="g1697"
+       transform="translate(-36.42816,-25.05269)">
+      <text
+         y="106.18743"
+         xml:space="preserve"
+         x="76.492348"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_5">\new Staff{  </text>
+      <text
+         y="118.18743"
+         xml:space="preserve"
+         x="76.492348"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_6">  \relative c'{  </text>
+      <text
+         y="130.18744"
+         xml:space="preserve"
+         x="76.492348"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_7">    e4 e f f  </text>
+      <path
+         transform="matrix(0.306405,0,0,0.35593,-17.27195,49.15646)"
+         sodipodi:open="true"
+         sodipodi:end="10.083"
+         sodipodi:start="3.8365587"
+         d="M 473.91503,205.02841 A 22.424416,20.665638 0 1 1 473.39914,205.62044"
+         sodipodi:ry="20.665638"
+         sodipodi:rx="22.424416"
+         sodipodi:cy="218.26184"
+         sodipodi:cx="491.13867"
+         id="path3790"
+         style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         sodipodi:type="arc" />
+      <path
+         id="path3847"
+         d="M 139.14436,128.99912 C 139.14436,129.10275 139.14436,129.20639 139.14436,128.99912 z "
+         style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <g
+         transform="translate(-26.50775,39.85016)"
+         id="g1670">
+        <text
+           id="text1672"
+           style="font-size:10px;font-family:Courier 10 pitch"
+           x="172.56308"
+           xml:space="preserve"
+           y="90.505196">  }  </text>
+        <text
+           id="text1674"
+           style="font-size:10px;font-family:Courier 10 pitch"
+           x="179.54308"
+           xml:space="preserve"
+           y="90.505196">}  </text>
+      </g>
+    </g>
+    <g
+       id="g1707"
+       transform="translate(-35.27976,-31.05269)">
+      <text
+         y="149.34528"
+         xml:space="preserve"
+         x="75.344017"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_10">\new Staff{  </text>
+      <text
+         y="161.34528"
+         xml:space="preserve"
+         x="75.344017"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_11">  \clef bass  </text>
+      <text
+         y="173.34528"
+         xml:space="preserve"
+         x="75.344017"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_12">  \relative c' {  </text>
+      <text
+         y="185.34528"
+         xml:space="preserve"
+         x="75.344017"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text_line_13">    g4 g g a  </text>
+      <path
+         transform="matrix(0.306405,0,0,0.35593,-17.85238,104.4242)"
+         sodipodi:open="true"
+         sodipodi:end="10.083"
+         sodipodi:start="3.8365587"
+         d="M 473.91503,205.02841 A 22.424416,20.665638 0 1 1 473.39914,205.62044"
+         sodipodi:ry="20.665638"
+         sodipodi:rx="22.424416"
+         sodipodi:cy="218.26184"
+         sodipodi:cx="491.13867"
+         id="path3792"
+         style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+         sodipodi:type="arc" />
+      <g
+         transform="translate(-26.50774,94.96996)"
+         id="g1676">
+        <text
+           id="text1678"
+           style="font-size:10px;font-family:Courier 10 pitch"
+           x="172.56308"
+           xml:space="preserve"
+           y="90.505196">  }  </text>
+        <text
+           id="text1680"
+           style="font-size:10px;font-family:Courier 10 pitch"
+           x="179.54308"
+           xml:space="preserve"
+           y="90.505196">}  </text>
+      </g>
+    </g>
+    <text
+       id="text_line_16"
+       style="font-size:10px;font-family:Courier 10 pitch"
+       x="40.064262"
+       xml:space="preserve"
+       y="167.83321">\new Staff{  </text>
+    <text
+       id="text_line_17"
+       style="font-size:10px;font-family:Courier 10 pitch"
+       x="40.064262"
+       xml:space="preserve"
+       y="179.83321">  \clef bass  </text>
+    <text
+       id="text_line_18"
+       style="font-size:10px;font-family:Courier 10 pitch"
+       x="40.064262"
+       xml:space="preserve"
+       y="191.83321">  \relative c {  </text>
+    <text
+       id="text_line_19"
+       style="font-size:10px;font-family:Courier 10 pitch"
+       x="40.064262"
+       xml:space="preserve"
+       y="203.83321">    c4 c g f  </text>
+    <path
+       sodipodi:type="arc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       id="path3794"
+       sodipodi:cx="491.13867"
+       sodipodi:cy="218.26184"
+       sodipodi:rx="22.424416"
+       sodipodi:ry="20.665638"
+       d="M 473.91503,205.02841 A 22.424416,20.665638 0 1 1 473.39914,205.62044"
+       sodipodi:start="3.8365587"
+       sodipodi:end="10.083"
+       sodipodi:open="true"
+       transform="matrix(0.306405,0,0,0.35593,-54.01154,123.9014)" />
+    <g
+       id="g1682"
+       transform="translate(-63.31861,113.4198)">
+      <text
+         y="90.505196"
+         xml:space="preserve"
+         x="172.56308"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text1684">  }  </text>
+      <text
+         y="90.505196"
+         xml:space="preserve"
+         x="179.54308"
+         style="font-size:10px;font-family:Courier 10 pitch"
+         id="text1686">}  </text>
+    </g>
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1.26305282px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 102.95751,104.39481 L 102.95751,104.39481 z M 101.96552,104.39481 C 133.70933,129.57859 105.43751,149.7878 105.43751,149.7878"
+       id="path1757" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1.33841765px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 103.6181,154.14056 C 137.5923,179.32434 103.6181,198.28991 103.6181,198.28991"
+       id="path1761" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 115.34795,63.976384 C 126.85165,81.076485 104.15516,98.798407 104.15516,98.798407"
+       id="path1342" />
+  </g>
+</svg>

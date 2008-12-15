@@ -1,0 +1,11 @@
+A codification for music structures with a high degree of abstraction
+is yet unheard in the field of computer music. This paper describes
+the research where domain specific languages have been created using
+Lisp to test possibilities of codifications according to a bottom-up
+model. That is, different aspects of a codification are tested in a
+prototype and it's utility is validated or rejected. For the moment
+some sub-problems have been identified with the help of this approach,
+such as the use of events, codification of durations, and vertical
+codification. The use of free software tools helps with the
+organization and dynamism of this research. All code produced by this
+research is licensed under the General Public License (GPL).

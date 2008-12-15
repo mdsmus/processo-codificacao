@@ -1,0 +1,73 @@
+\documentclass[brazil,11pt]{article}
+\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
+%\usepackage{artigos}
+\usepackage{url}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{times}
+\usepackage{graphicx}
+
+\begin{document}
+
+A codificação musical é a busca da representação de elementos
+sonoros. Exemplos simples de codificações incluem a representação das
+notas musicais por letras (C para dó, D para ré, e assim por diante)
+ou números (0 para dó, 1, para dó$\sharp$, 2 para ré, e assim por
+diante). Codificações musicais têm sido usadas desde os primeiros
+esforços do homem para transcrever sons. Ainda que a codificação
+musical não esteja limitada à aplicações para computador é nessa área
+que encontramos o maior número de pesquisas, dadas as possibilidades
+de processamento oferecidas pelo computador
+\cite[p.~3--5]{selfridge-field97:beyond}. Existem codificações para
+performance (e.g. MIDI), síntese sonora (e.g. Csound), jogos
+(e.g. \textit{Music Macro Language}), notação musical
+(e.g. \textit{Common Music Notation}, SCORE, GUIDO), braile,
+bibliografia musical (e.g. Plaine, Easie) e análise de canções
+folclóricas (e.g. Essen, FRELMUS). Novas codificações como SDML e
+MusicXML \cite{good01:musicxml} em geral lidam apenas com elementos de
+notação como compasso, notas, durações, etc. Tem se dado uma grande
+relevância para o desenvolvimento de sistemas para retornar dados a
+perguntas por ``melodias cantadas'' \cite{uitdenbogerd00:music} e a
+criação de ferramentas para procura em bibliotecas digitais,
+retornando dados como gênero, tempo, executante, compositor, etc.
+\cite{clausen00:proms,dunn00:beyond,bainbridge03:analysis}. Algumas
+pesquisas lidam com o conceito de ``unidades composicionais''
+\cite{berggren97:beyond-chapter} e reconhecem a necessidade de agrupar
+a representação em unidades como ``frases'' \cite{rol00:xml4mir},
+contudo não é de nosso conhecimento nenhuma pesquisa envolvendo uma
+codificação específica para definir estruturas musicais em um nível
+mais alto de abstração. Um trabalho semelhante \cite{holger01:guido}
+usa o formato GUIDO, não tem abstração de alto-nível e seu objetivo
+principal é o de codificação para banco de dados, não de estruturas
+musicais.
+
+O Humdrum foi criado para facilitar a possibilidade de propor
+perguntas e respostas à questões relacionadas a pesquisa no campo
+musical \cite{selfridge-field97:_humdr_and_kern}. Ele pode extrair
+trechos usando expressões regulares ou através do comando
+\texttt{extract}, que extrai colunas dentro da representação
+``tabular'' do Humdrum \cite{huron99:music_resear_using_humdr}. Ele
+provê grande extensibilidade, contudo não de uma maneira padrão
+(existem mais de 40 formatos). O \textit{Themefinder}
+(\url{www.themefinder.org}) é um exemplo de uso do Humdrum. Ele
+permite a busca por notas, intervalos, grau da escala, e
+contorno. Essa é uma demonstração da limitação desse tipo de
+codificação que lida apenas com elementos como compasso, notas,
+durações, etc, conforme citamos anteriormente. Apesar de novas
+\textit{spines} (uma coluna com informação) poderem ser criadas é
+difícil criar representações em um nível mais alto de abstração.
+
+O MusicXML foi criada para ser uma representação para notação
+intercambiável entre diferentes representações. Ela possui suporte
+para notação musical, performance, análise, e extração de
+dados. Contudo ela foi criada para ser ``suficiente'' e não
+``otimizada'' para essas aplicações \cite{good01:musicxml}. O MusicXML
+não só não possui abstrações em níveis mais alto como explicitamente
+divide a representação em compassos, tornando difícil a representação
+de estruturas que englobam partes de compassos.
+
+\bibliographystyle{plain}
+\bibliography{bib/bibliography,bib/bib-mir}
+
+\end{document}

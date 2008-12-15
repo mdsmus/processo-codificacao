@@ -1,0 +1,12 @@
+O trabalho de codificação de estruturas musicais com um alto grau de
+abstração ocupa um espaço ainda não preenchido na área de computação
+musical. Esse artigo descreve a pesquisa onde linguagens de domínio
+específico estão sendo criadas em Lisp para testar possibilidades de
+codificações segundo um modelo bottom-up. Ou seja, diferentes aspectos
+de uma codificação são testados em um protótipo e sua utilidade é
+validada ou descartada. Até o momento alguns sub-problemas foram
+identificados com a ajuda dessa abordagem, como a utilização de
+eventos, codificação das durações, e codificação vertical. O uso de
+ferramentas específicas de software livre colabora com a organização e
+dinamismo dessa pesquisa e todo o código gerado é licenciado sob a
+Licença Pública Geral (GPL).
